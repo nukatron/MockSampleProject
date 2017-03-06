@@ -5,9 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.sample.di.Injection;
 import com.sample.di.R;
 import com.sample.di.data.GroceryItem;
-import com.sample.di.data.Repositories;
 
 import java.util.List;
 
@@ -22,7 +22,7 @@ public class GroceryActivity extends AppCompatActivity implements GroceryContact
         setContentView(R.layout.activity_grocery);
         
         //create presenter 
-        mPresenter = new GroceryPresenter(this, Repositories.getRepoInstance());
+        mPresenter = new GroceryPresenter(this, Injection.provideRepository());
 
         initView();
     }

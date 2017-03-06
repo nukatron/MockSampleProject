@@ -16,7 +16,7 @@ public class MockServiceApiImpl implements ServiceApi {
         //you can initial mock data here.
         //you might assign them from json or any data source that you want.
         mMockData.put("id-1", new GroceryItem("id-1", "MockItem1", 10));
-        mMockData.put("id-2", new GroceryItem("id-1", "MockItem2", 20));
+        mMockData.put("id-2", new GroceryItem("id-2", "MockItem2", 20));
         mMockData.put("id-3", new GroceryItem("id-3", "MockItem3", 30));
     }
 
