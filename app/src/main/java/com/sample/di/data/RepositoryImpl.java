@@ -16,7 +16,7 @@ public class RepositoryImpl implements Repository {
     }
 
     @Override
-    public void getAllItems(@NonNull final LoadItemCallback callback) {
+    public void getAllItems(@NonNull final LoadItemsCallback callback) {
         if(mCacheItems.isEmpty()) {
             mService.getAllItems(new ServiceApi.ServiceCallback<List<GroceryItem>>() {
                 @Override
@@ -31,7 +31,7 @@ public class RepositoryImpl implements Repository {
     }
 
     @Override
-    public void getItem(@NonNull String id, @NonNull final GetItemCallback callback) {
+    public void getItem(@NonNull String id, @NonNull final LoadItemCallback callback) {
         mService.getItem(id, new ServiceApi.ServiceCallback<GroceryItem>() {
             @Override
             public void onLoaded(GroceryItem item) {

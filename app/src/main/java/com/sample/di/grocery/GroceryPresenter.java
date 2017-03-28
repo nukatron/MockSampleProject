@@ -24,7 +24,7 @@ public class GroceryPresenter implements GroceryContact.UserActionsListener {
             mRepository.refreshData();
         }
 
-        mRepository.getAllItems(new Repository.LoadItemCallback() {
+        mRepository.getAllItems(new Repository.LoadItemsCallback() {
             @Override
             public void onLoaded(List<GroceryItem> items) {
                 mView.showGroceryItems(items);
@@ -34,7 +34,7 @@ public class GroceryPresenter implements GroceryContact.UserActionsListener {
 
     @Override
     public void randomItem() {
-        mRepository.getAllItems(new Repository.LoadItemCallback() {
+        mRepository.getAllItems(new Repository.LoadItemsCallback() {
             @Override
             public void onLoaded(List<GroceryItem> items) {
                 if(items.size() >= 0) {
